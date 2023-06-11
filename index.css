@@ -1,39 +1,31 @@
 body {
   margin: 0;
   padding: 10px;
+  font-size: small;
   font-family: Arial, Helvetica, sans-serif;
   min-width: 350px;
   text-align: right;
 }
 
-/*
-
-Style our app according to the provided design!
-
-green color -> #5f9341
-
-*/
-
 #input-el {
   width: 100%;
-  margin-top: 2px;
-  padding: 9px;
+  padding: 8px;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid blueviolet;
+  color: darkslategrey;
 }
 
 button {
   background: blueviolet;
-  color: aliceblue;
-
+  color: white;
+  font-size: 11px;
   padding: 8px;
   border: 1px solid blueviolet;
   border-radius: 5px;
-  margin-top: 10px;
-  /* font-size: medium; */
-  font-weight: bold;
-  width: 25%;
+  margin: 6px 0px 0px 2px;
+  font-weight: bolder;
+  width: 22%;
 }
 
 #clear-btn {
@@ -48,21 +40,25 @@ button {
 
 /*list items*/
 form {
-  margin-top: 10px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  list-style: none;
-  padding-left: 5 px;
   text-align: left;
-}
-
-form input {
-  margin-top: 10px;
 }
 
 form a {
   color: blueviolet;
   text-decoration: none;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  margin-top: 6px;
+}
+
+input[type="checkbox"] ~ label {
+  padding-left: 1.7em;
+  display: inline-block;
+  margin-top: 6px;
 }
 
 ::selection {

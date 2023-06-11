@@ -1,9 +1,9 @@
 body {
-    margin: 0;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    min-width: 350px;
-    text-align: right;
+  margin: 0;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 350px;
+  text-align: right;
 }
 
 /*
@@ -14,48 +14,58 @@ green color -> #5f9341
 
 */
 
-
 #input-el {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid blueviolet;
+  width: 100%;
+  margin-top: 2px;
+  padding: 9px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
 }
 
 button {
-   background:blueviolet;
-   color: aliceblue;
-    
-   padding: 8px;
-   border:none;
-   border-radius: 5px;
-   margin-top: 10px;
-   /* font-size: medium; */
-   font-weight: bold;
-   width: 30%;
+  background: blueviolet;
+  color: aliceblue;
+
+  padding: 8px;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  margin-top: 10px;
+  /* font-size: medium; */
+  font-weight: bold;
+  width: 25%;
 }
 
+#clear-btn {
+  background: white;
+  color: blueviolet;
+}
+
+#tab-btn {
+  background: rgb(72, 7, 133);
+  border: 1px solid rgb(72, 7, 133);
+}
 
 /*list items*/
-
 form {
-    margin-top: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    list-style: none;
-    padding-left:5 px;
-    text-align: left;
+  margin-top: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  list-style: none;
+  padding-left: 5 px;
+  text-align: left;
 }
 
 form input {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 form a {
-    color: blueviolet;
+  color: blueviolet;
+  text-decoration: none;
 }
 
 ::selection {
-    color: white;
-    background: rgb(18, 202, 33);
+  color: white;
+  background: rgb(18, 202, 33);
 }

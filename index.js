@@ -25,7 +25,7 @@ function render(leads) {
                 <a  target='_blank' href='${leads[i].url}'> 
                     ${leads[i].title} 
                 </a>
-            </lable>
+            </label>
         <br>
     `;
   }

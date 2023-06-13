@@ -100,10 +100,11 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] ~ label {
-  padding-left: 1.7em;
+  padding-left: 1.8em;
   display: inline-block;
+  text-align: justify;
   max-width: 300px;
-  overflow-wrap: break-word;
+  overflow-wrap:break-word;
   margin-top: 6px;
 }
 

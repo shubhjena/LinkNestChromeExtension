@@ -34,13 +34,10 @@ function render(leads) {
 
 //Add Link button: adds the text entered in input box to list
 inputBtn.addEventListener("click", function () {
-  console.log(inputEl.value+"1")
   if(inputEl.value){
-    console.log(inputEl.value+"1.5")
     myLeads.push({ "url": inputEl.value, "title": inputEl.value });
   }
   inputEl.value = "";
-  console.log(inputEl.value+"2")
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
   render(myLeads);
 });

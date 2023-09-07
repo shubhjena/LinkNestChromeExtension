@@ -28,15 +28,16 @@ body {
 }
 
 #title {
-  background: linear-gradient(to right, green, blue);
+  background: linear-gradient(to right,blue,dodgerblue);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight:bolder;
+  letter-spacing: 2;
+  font-size: 22px;
 }
 
 #sign-in-button {
@@ -55,6 +56,7 @@ body {
 #input-el {
   width: 100%;
   padding: 8px;
+  margin-top: 3px;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid blueviolet;
@@ -62,7 +64,7 @@ body {
 }
 
 button {
-  background: blueviolet;
+  background:blueviolet;
   color: white;
   font-size: 11px;
   padding: 8px;
@@ -85,13 +87,16 @@ button {
 
 /*list items*/
 form {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
   text-align: left;
 }
 
 form a {
   color: blueviolet;
+}
+
+li{
+  list-style-type: none;
 }
 
 input[type="checkbox"] {
@@ -106,6 +111,32 @@ input[type="checkbox"] ~ label {
   max-width: 300px;
   overflow-wrap:break-word;
   margin-top: 6px;
+}
+
+/* Add a strikethrough style for completed items */
+.completed {
+  text-decoration: line-through;
+}
+
+/* Style for delete buttons */
+.delete-btn {
+  width:auto;
+  background-color: white;
+  color:tomato;
+  font-weight: 100;
+  border: none;
+  border-radius: 0%;
+  cursor: pointer;
+  position: absolute;
+  padding: 1px;
+  right: 10;
+  display:none; /* Hidden by default, outside the list item */
+  transition: right 0.2s; /* Smooth transition effect */
+}
+
+/* Show delete button on list item hover */
+li:hover .delete-btn {
+  display:inline-block; /* Display on hover */
 }
 
 /* bottom bar */

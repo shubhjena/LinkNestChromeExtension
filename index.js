@@ -3,7 +3,7 @@ let myLeads = []; //stores the list of links entered
 //all HTML DOM variables
 const inputBtn = document.getElementById("input-btn");
 const clearBtn = document.getElementById("clear-btn");
-const TabBtn = document.getElementById("tab-btn");
+const tabBtn = document.getElementById("tab-btn");
 const inputEl = document.getElementById("input-el");
 const ulEl = document.getElementById("form-el");
 
@@ -20,16 +20,20 @@ function render(leads) {
   let listItem = "";
   for (let i = 0; i < leads.length; i++) {
     listItem += `
-        <input type="checkbox">
-            <label>
+      <li>
+        <input type="checkbox" id="item checkbox-${i}">
+        <label for="checkbox-${i}" class="${leads[i].checked ? 'completed' : ''}">
                 <a  target='_blank' href='${leads[i].url}'> 
                     ${leads[i].title} 
                 </a>
             </label>
-        <br>
+            <button class="delete-btn" data-index="${i}">Remove</button>
+        </li>
     `;
   }
   ulEl.innerHTML = listItem;
+  attachCheckboxHandlers();
+  attachDeleteHandlers();
 }
 
 //Add Link button: adds the text entered in input box to list
@@ -58,10 +62,44 @@ clearBtn.addEventListener("dblclick", function () {
 });
 
 //Add Tab button: adds the link of active tab to the list
-TabBtn.addEventListener("click", function () {
+tabBtn.addEventListener("click", function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     myLeads.push({ "url": tabs[0].url, "title": tabs[0].title });
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     render(myLeads);
   });
 });
+
+// Attach event handlers to checkboxes
+function attachCheckboxHandlers() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener("change", function () {
+      myLeads[index].checked = this.checked;
+      moveCheckedItemsToBottom();
+      localStorage.setItem("myLeads", JSON.stringify(myLeads));
+      render(myLeads);
+    });
+
+    // Initialize checkbox state based on the myLeads data
+    checkbox.checked = myLeads[index].checked;
+  });
+}
+
+// Attach event handlers to delete buttons
+function attachDeleteHandlers() {
+  const deleteButtons = document.querySelectorAll('.delete-btn');
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const index = this.getAttribute("data-index");
+      myLeads.splice(index, 1);
+      localStorage.setItem("myLeads", JSON.stringify(myLeads));
+      render(myLeads);
+    });
+  });
+}
+
+// Function to reorganize the myLeads array by moving checked items to the bottom
+function moveCheckedItemsToBottom() {
+  myLeads.sort((a, b) => (a.checked === b.checked ? 0 : a.checked ? 1 : -1));
+}

@@ -1,4 +1,5 @@
 body {
+  background-color: #352F44;
   margin: 0;
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +15,7 @@ body {
 
 /* top bar */
 #top-bar {
-  background: linear-gradient(to bottom, rgb(170, 252, 225), white);
+  /* background: linear-gradient(to bottom, rgb(170, 252, 225), white); */
   position: relative;
   display: flex;
   justify-content: left;
@@ -28,7 +29,7 @@ body {
 }
 
 #title {
-  background: linear-gradient(to right,blue,dodgerblue);
+  background: linear-gradient(to right,white,#B9B4C7);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -55,48 +56,53 @@ body {
 
 #input-el {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 3px;
   box-sizing: border-box;
-  border-radius: 5px;
-  border: 1px solid blueviolet;
-  color: darkslategrey;
+  border-radius: 8px;
+  border: 0;
+  background-color: #5C5470;
+  color: whitesmoke;
 }
 
 button {
-  background:blueviolet;
+  background:cornflowerblue;
   color: white;
   font-size: 11px;
   padding: 8px;
-  border: 1px solid blueviolet;
+  border: 0;
   border-radius: 5px;
   margin: 6px 0px 0px 2px;
-  font-weight: bolder;
+  font-weight: bold;
   width: 22%;
 }
 
 #clear-btn {
-  background: white;
+  background: #FAF0E6;
   color: blueviolet;
 }
 
 #tab-btn {
-  background: rgb(72, 7, 133);
-  border: 1px solid rgb(72, 7, 133);
+  background: blueviolet;
 }
 
 /*list items*/
 form {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif; */
   text-align: left;
+  margin-top: 8;
 }
 
 form a {
-  color: blueviolet;
+  color: #B9B4C7;
 }
 
 li{
   list-style-type: none;
+  /* background-color:#5C5470;
+  margin: 2px 0;
+  padding: 3 3 6 15;
+  border-radius: 15px; */
 }
 
 input[type="checkbox"] {
@@ -121,7 +127,7 @@ input[type="checkbox"] ~ label {
 /* Style for delete buttons */
 .delete-btn {
   width:auto;
-  background-color: white;
+  background-color: transparent;
   color:tomato;
   font-weight: 100;
   border: none;
@@ -129,6 +135,7 @@ input[type="checkbox"] ~ label {
   cursor: pointer;
   position: absolute;
   padding: 1px;
+  padding-right: 15;
   right: 10;
   display:none; /* Hidden by default, outside the list item */
   transition: right 0.2s; /* Smooth transition effect */
@@ -142,7 +149,7 @@ li:hover .delete-btn {
 /* bottom bar */
 
 #bottom-bar {
-  background-color: rgb(185, 255, 232);
+  background-color: #231f2e;
   padding: 5px;
   align-items: center;
   display: flex;
@@ -154,13 +161,15 @@ li:hover .delete-btn {
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  fill: #000;
 }
-
+svg{
+  fill:#7b7097;
+}
 span {
   vertical-align: 5;
 }
 
 a {
   text-decoration: none;
+  color: #7b7097;
 }
